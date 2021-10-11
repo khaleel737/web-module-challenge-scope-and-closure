@@ -61,12 +61,11 @@ Use the inning function below to do the following:
   
 NOTE: This will be a callback function for the tasks below
 */
-
-function inning(/*Code Here*/){
-    /*Code Here*/
-    return Math.floor(Math.random() * 2);
+function inning(num){
+  /*Code Here*/
+  return Math.floor(Math.random() * 2);
 }
-console.log(inning())
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -82,11 +81,97 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(func, num){
-  /*Code Here*/
-return function inning();
-return `A`
+function finalScore(inningCB, rounds) {
+
+  const currentScr = rounds + inningCB;
+  let Home = Home + currentScr;
+  let Away = Away + currentScr;
+
+  return {
+    Home: inningCB * rounds,
+    Away: inningCB * rounds
+  }
 }
+console.log(finalScore(inning(), 9));
+
+// function finalScore(inningCB, rounds){
+//   /*Code Here*/
+// const totals = [];
+// // return function inning();
+// let home = 0;
+// let away = 0;
+
+// // console.log(totals);
+// console.log(home);
+// // console.log(away);
+// let game = {
+//   Home: inningCB,
+//   Away: inningCB 
+// }
+
+
+// for (let i = 0; i < 1; i++) {
+//   // totals.push(home, away)
+//   const currScore = game;
+//   home = home + currScore.Home;
+//   away = away + currScore.Away;
+//   // totals = ;
+//   totals.push(`Rounds ${i + 1}: Home: ${home} - Away: ${away}`);
+// }
+// return totals;
+// // // return `A`
+// }
+// console.log(finalScore(inning(), 9));
+
+// function finalScore(inningCB, rounds){
+//   /*Code Here*/
+//   let totals = [];
+// // return function inning();
+// let home = 0;
+// let away = 0;
+
+// // console.log(totals);
+// console.log(home);
+// console.log(away)
+// // console.log(away);
+
+// for (let i = 0; i < rounds; i++) {
+//   // totals.push(home, away)
+//   home = inningCB;
+//   away = inningCB;
+//   // totals = ;
+//   totals.push(`Home: ${home} - Away: ${away}`);
+// }
+
+// return {
+//   Home: inningCB,
+//   Away: inningCB
+//   };
+
+// // return totals;
+// // // return `A`
+// }
+// console.log(finalScore(inning(), 9));
+
+
+
+// function totalGameScore(scoreCb, gameCb){
+//   // push our results to this array 
+//   const result = []; 
+//   let homeScore = 0;
+//   let awayScore = 0; 
+  
+//   for(let i = 0 ; i < 10; i++){
+//     const currentScore = gameCb(scoreCb);
+//     homeScore = homeScore + currentScore.Home;
+//     awayScore = awayScore + currentScore.Away;
+//     result.push(`Period ${i + 1}: Away: ${awayScore} - Home: ${homeScore}`);
+//   }
+  
+//   return result;
+// }
+
+// console.log(totalGameScore(inning(), 9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
