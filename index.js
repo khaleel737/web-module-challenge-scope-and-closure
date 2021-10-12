@@ -61,11 +61,9 @@ Use the inning function below to do the following:
   
 NOTE: This will be a callback function for the tasks below
 */
-function inning(num){
-  /*Code Here*/
-  return Math.floor(Math.random() * 2);
+function inning(){
+  return Math.floor(Math.random() * 3);
 }
-console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -81,18 +79,26 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(inningCB, rounds) {
-
-  const currentScr = rounds + inningCB;
-  let Home = Home + currentScr;
-  let Away = Away + currentScr;
+function finalScore(inningCB, num) {
 
   return {
-    Home: inningCB * rounds,
-    Away: inningCB * rounds
+    Home: inningCB() * num,
+    Away: inningCB() * num
   }
-}
-console.log(finalScore(inning(), 9));
+  }
+  console.log(finalScore(inning, 9));
+
+//   const currentScr = rounds + inningCB;
+//   // let Home = Home * currentScr;
+//   // let Away = Away * currentScr;
+
+//   let game = {
+//     Home: inningCB * currentScr,
+//     Away: inningCB * currentScr
+//   }
+//   return game;
+// }
+// console.log(finalScore(inning(), 9));
 
 // function finalScore(inningCB, rounds){
 //   /*Code Here*/
@@ -178,11 +184,36 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
+function getInningScore(inningRon, rounds) {
   /*Your Code Here */
-  
+  let totals = [];
+// return function inning();
+let home = 0;
+let away = 0;
+
+// console.log(totals);
+console.log(home);
+console.log(away)
+// console.log(away);
+
+for (let i = 0; i < rounds; i++) {
+  // totals.push(home, away)
+  home = inningRon;
+  away = inningRon;
+  // totals = ;
+  totals.push(`Home: ${home} - Away: ${away}`);
 }
 
+return {
+  Home: inningRon(),
+  Away: inningRon()
+  };
+
+// return totals;
+// // return `A`
+}
+
+// console.log(finalScore(inning(), 9));
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
